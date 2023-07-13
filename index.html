@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Judul Halaman</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Tugas', 'Jam per Hari'],
+                ['Kerja', 8],
+                ['Makan', 2],
+                ['Berpergian', 5],
+                ['Bermain HP', 2],
+                ['Tidur', 7]
+            ]);
+
+            var options = {
+                title: 'Aktivitas Harian Saya'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Selamat datang!</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tentang Kami</h2>
+            <p>Ini adalah halaman contoh yang menampilkan informasi tentang perusahaan kami.</p>
+        </section>
+
+        <section>
+            <h2>Kontak</h2>
+            <p>Silakan hubungi kami melalui formulir di bawah ini:</p>
+            <form>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" name="pesan"></textarea>
+                <br>
+                <input type="submit" value="Kirim">
+            </form>
+        </section>
+
+        <section>
+            <h2>Grafik Aktivitas Harian</h2>
+            <div id="chart"></div>
+        </section>
+    </main>
+</body>
+
+</html>
